@@ -1,0 +1,412 @@
+@import 'variable.less';
+html,
+body {
+  // user-select: none;
+  background-color: @color-background;
+  height: 100%;
+  color: @color-text;
+}
+
+input {
+  outline: none;
+}
+
+.clearfix {
+  zoom: 1;
+
+  &::after {
+    content: '';
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+}
+
+.no-border-bottom {
+  border-bottom: none !important;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.flexBox{
+	/* 设置弹性布局 */
+	display: -webkit-box;
+	/* android 2.1-3.0, ios 3.2-4.3 */
+	display: -webkit-flex;
+	/* Chrome 21+ */
+	display: -ms-flexbox;
+	/* WP IE 10 */
+	display: flex;
+	/* android 4.4 */
+}
+
+/*内容的排列方式*/
+/*横向排列*/
+.flex-direction-row{
+	flex-direction: row;
+}
+/*纵向排列*/
+.flex-direction-column{
+	/* 设置弹性布局的方向，子元素按照在源文档中声明的顺序从上到下显示 */
+	-webkit-box-orient: vertical;
+	/* android 2.1-3.0, ios 3.2-4.3 */
+	-webkit-flex-direction: column;
+	/* Chrome 21+ */
+	-ms-flex-direction: column;
+	/* WP IE 10 */
+	flex-direction: column;
+	/* android 4.4 */
+}
+
+/*内容超出后换行的方式*/
+/*不换行*/
+.flex-nowrap{
+	flex-wrap: nowrap;
+}
+/*换行*/
+.flex-wrap{
+	flex-wrap: wrap;
+}
+
+/*内容的排列和内容超出后换行的方式*/
+/*flex-direction 和 flex-wrap 的简写*/
+.flex-flow{
+	flex-flow: row nowrap;
+}
+
+/*水平对齐方式*/
+/*居中*/
+.justify-content-center{
+	/* 水平布局下的子元素 水平居中 */
+	-webkit-box-pack: center;
+	/* android 2.1-3.0, ios 3.2-4.3 */
+	-webkit-justify-content: center;
+	/* Chrome 21+ */
+	-ms-flex-pack: center;
+	/* WP IE 10 */
+	justify-content: center;
+	/* android 4.4 */
+}
+/*左对齐*/
+.justify-content-left{
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+/*右对齐*/
+.justify-content-right{
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+/*两端对齐*/
+.justify-content-between{
+	/* 水平布局下的子元素 2端对齐 */
+	-webkit-box-pack: justify;
+	/* android 2.1-3.0, ios 3.2-4.3 */
+	-webkit-justify-content: space-between;
+	/* Chrome 21+ */
+	-ms-flex-pack: justify;
+	/* WP IE 10 */
+	justify-content: space-between;
+	/* android 4.4 */
+}
+/*间隔相等对齐*/
+.justify-content-around{
+	justify-content: space-around;
+}
+
+
+/*垂直对齐方式*/
+/*居中对齐*/
+.align-items-center{
+	/* 水平布局下的子元素 垂直居中 */
+	-webkit-box-align: center;
+	/* android 2.1-3.0, ios 3.2-4.3 */
+	-webkit-align-items: center;
+	/* Chrome 21+ */
+	-ms-flex-align: center;
+	/* WP IE 10 */
+	align-items: center;
+	/* android 4.4 */
+}
+/*上对齐*/
+.align-items-top{
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+/*下对齐*/
+.align-items-bottom{
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+/*项目的第一行文字的基线对齐*/
+.align-items-baseline{
+	align-items: baseline;
+}
+/*如果项目未设置高度或设为auto，将占满整个容器的高度*/
+.align-items-stretch{
+	align-items: stretch;
+}
+
+/*项目的放大比例，默认为0*/
+.flex-grow{
+	flex-grow: 1;
+}
+.flex1{
+	flex: 1;
+}
+/*项目的排列顺序。数值越小，排列越靠前，默认为0*/
+.order{
+	order: 1;
+}
+/*定义了项目的缩小比例，默认为1*/
+/*如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。
+  如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。*/
+.flex-shrink{
+	flex-shrink:1;
+}
+/*定义了在分配多余空间之前，项目占据的主轴空间*/
+.flex-basis{
+	flex-basis: auto;
+}
+/*align-self属性允许单个项目有与其他项目不一样的对齐方式，
+  可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，
+  如果没有父元素，则等同于stretch*/
+.align-self-center{
+	align-self: center;
+}
+.align-self-right{
+	align-self: right;
+}
+
+// 分割线
+.split-line {
+  &::after {
+    content: " | ";
+  }
+}
+.mt20{
+  margin-top: 20px;
+}
+.mb20{
+  margin-bottom: 20px;
+}
+//vant 日期选择器样式
+.van-datetime-picker,
+.van-area {
+  .van-picker__toolbar {
+    height: 90px;
+    line-height: 90px;
+    padding: 0 40px;
+    background: rgba(233, 243, 255, 1);
+  }
+
+  .van-picker__cancel,
+  .van-picker__title,
+  .van-picker__confirm {
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(51, 51, 51, 1);
+  }
+
+  .van-picker-column {
+    font-size: 28px;
+    position :relative;
+    z-index :1;
+    &:before{
+      width: 100%;
+      height: 100%;
+      position :absolute;
+      top :0;
+      left: 0;
+      content :'';
+    }
+    &>ul{
+      z-index :-1;
+      position :relative;
+    }
+  }
+
+  .van-picker-column__item {
+    color: #999;
+  }
+
+  .van-picker-column__item--selected {
+    color: #333;
+  }
+
+}
+
+//密码数字输入框
+.van-number-keyboard {
+  position: relative !important;
+
+  .van-key::after {
+    border-color: #E5E5E5;
+  }
+
+  .van-key {
+    font-size: 48px;
+    color: #353535;
+    height: 108px;
+    line-height: 108px;
+  }
+
+  .van-key--gray {
+    background-color: #ECECEC;
+  }
+}
+
+.van-password-input {
+  padding: 0 30px;
+
+  .van-password-input__security {
+    height: 100px;
+    line-height: 100px;
+    border: 2px solid #CBCBCB;
+    /*px*/
+    border-radius: 10px;
+    overflow: hidden;
+
+    i {
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      margin: -16px 0 0 -16px;
+    }
+
+    .van-hairline--left::after {
+      border-color: #CBCBCB;
+      border-left-width: 2px;
+      /*px*/
+    }
+
+  }
+}
+.collapse-transition {
+  transition: 0.3s height ease-in-out, 0.3s padding-top ease-in-out, 0.3s padding-bottom ease-in-out;
+}
+
+// 超出显示省略号
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// indexlist
+.van-index-bar__sidebar{
+  position: fixed !important;
+  top: 50%!important;
+  right: 30px!important;
+  display: flex!important;
+  flex-direction: column!important;
+  text-align: center!important;
+  transform: translateY(-50%) !important;
+  // user-select: none;
+  background-color: rgba(0, 0, 0, 0.3)!important;
+  border-radius: 100px!important;/*no*/
+  padding: 5px 2px !important;/*no*/
+  line-height: 1 !important;
+  z-index: 10 !important;
+  .van-index-bar__index{
+    display: inline-block !important;
+    width: 20px !important;/*no*/
+    height: 20px !important;/*no*/
+    line-height: 20px !important;/*no*/
+    font-weight: 500 !important;
+    font-size: 10px !important;/*no*/
+    color: #FFFFFF !important;
+    // padding: 6px;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+    padding:0!important;
+  }
+  .van-index-bar__index--active{
+    background-color: rgb(191, 162, 83)!important;
+  }
+}
+.van-index-anchor{
+  height: 50px!important;
+  line-height: 50px!important;
+  background-color: #E5E5E5!important;
+  font-size: 22px!important;
+  color: #333333!important;
+  padding-left: 38px!important;
+}
+.van-pull-refresh__track{
+  height: 100%;
+}
+.van-list-order{
+  .van-pull-refresh__head{
+    display: none;
+  }
+  .van-list__loading{
+    display: none;
+  }
+}
+//  订单页骨架屏
+.skeleton-order{
+  padding: 20px;
+  .van-skeleton__row{
+    height: 150px;
+  }
+} 
+.skeleton-material{
+  padding: 20px;
+  .van-skeleton__row{
+    height: 150px;
+  }
+}
+
+// 阻止滚动
+.no-scroll{
+  overflow: hidden !important;
+}
+#__vconsole .vc-switch {
+  z-index: 1000000 !important;
+}
+#__vconsole .vc-mask{
+  z-index: 1000001 !important;
+}
+#__vconsole .vc-panel {
+  z-index: 1000002 !important;
+}
+.no-bar{
+  display: none !important;
+}
+//抖动
+@keyframes shake
+{
+0%   {left:0px;}
+25%  {left:10px;}
+50%  {left:0;}
+75%  {left:-10px;}
+100% {left:0px; }
+}
+.shake{
+  animation: shake .15s  linear infinite;
+}
+// html {-webkit-filter: grayscale(100%);-0-filter:grayscale(100%); -moz-filter:grayscale(100%); -webkit-filter:grayscale(100%); filter:progid:DXImageTransform.Microsoft.BasicImage(graysale=1); filter: gray; _filter: gray; }
+// body { filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */filter: grayscale(100%); /* Current draft standard */-webkit-filter: grayscale(100%); /* New WebKit */
+//   -moz-filter: grayscale(100%);
+//   -ms-filter: grayscale(100%); 
+//   -o-filter: grayscale(100%);
+//   filter: gray; /* IE6+ */
+//   _filter: gray; /* IE6+ */
+// }
