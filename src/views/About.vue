@@ -2,7 +2,7 @@
  * @Author: 汪鑫
  * @Date: 2021-09-28 10:41:30
  * @Annotate: 输入这页的内容
- * @LastEditTime: 2021-09-28 11:18:56
+ * @LastEditTime: 2021-09-28 11:31:23
  * @LastEditors: 汪鑫
  * @Description: 
  * @FilePath: /pc-model/src/views/About.vue
@@ -10,6 +10,6 @@
 -->
 <template>
   <div class="about">
-    About
+    <el-button>wode</el-button>
   </div>
 </template>
